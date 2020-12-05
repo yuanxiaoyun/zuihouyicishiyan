@@ -15,27 +15,26 @@
 5.设计程序完成上述的业务逻辑处理，并且把“古诗处理后的输出”结果存储到学生基本信息所在的文本文件A中。
 # 实验过程  
 1.先设计学生类，对姓名，性别，学号，年龄等变量初始化  
+2.创建Test类，先对学生信息进行打印输出，创建一个新文件。用于存储处理后的信息  3.定义字符串的内容为空，
 
 # 核心代码  
-        File sourcefile = new File("D://实验1.txt");  
-        File targetFile = new File("D://作业.txt");  
-        char b[] = new char[100];  
-        String original = null;  
-        int n = -1;  
-        StringBuffer sb = new StringBuffer(); 
+        ile targetFile = new File("D://作业.txt");//创建文件  
+        char b[] = new char[100];   
+        String x = null;//字符串内容为空  
+        int n = -1;   
+        StringBuffer y = new StringBuffer();  
         try {  
-            File file = new File("D://实验1.txt");  
+            File file = new File("D://实验1.txt");//读取文件  
             InputStream c = new FileInputStream(file);  
-            InputStreamReader in = new InputStreamReader(c, "GBK");  
-            Writer out = new FileWriter(targetFile,true);  
-            while ((n = in.read(b, 0, 100)) != -1) {  
+            InputStreamReader in = new InputStreamReader(c, "GBK");//创建输入流   
+            while ((n = in.read(b, 0, 100)) != -1) {//将文件中字符存入字符串  
                 String s = new String(b,0,n);   
-                if(original!=null)   
-                    original = original+s;   
-                else original =s;  
+                if(x!=null)  
+                    x = x+s;   
+                else x =s;  
             }  
             in.close();  
-        }  
+        }
 # 实验总结
 
 
